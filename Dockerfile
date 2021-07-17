@@ -7,7 +7,7 @@ RUN dotnet --version
 RUN dotnet restore
 
 # copy and publish app and libraries
-COPY . .
+COPY Program.cs .
 RUN dotnet publish -c release -o /app --no-restore
 
 FROM mcr.microsoft.com/dotnet/runtime:5.0-windowsservercore-ltsc2019 as vsinstall
